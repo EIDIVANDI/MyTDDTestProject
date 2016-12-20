@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +266,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Person\Display.cshtml" />
+    <Content Include="Views\Person\HttpNotFound.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -278,6 +282,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyProjectBLL\MyProjectBLL.csproj">
+      <Project>{76914EAC-3135-4487-9D37-C447CDBDB76B}</Project>
+      <Name>MyProjectBLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyProjectDAL\MyProjectDAL.csproj">
       <Project>{2bcaac28-ee08-433d-b01a-32e06226daca}</Project>
       <Name>MyProjectDAL</Name>
