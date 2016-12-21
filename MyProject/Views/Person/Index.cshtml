@@ -1,7 +1,30 @@
-﻿
+﻿@model IEnumerable<MyProjectDAL.Entity.Person>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+@using (Html.BeginForm("Index", "Person"))
+{
+    if (Model != null && Model.Any())
+    {
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonEmail)
+                </th>
+            </tr>
 
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @Html.Partial("_DisplayPersonInfo", item)
+                </tr>
+
+            }
+        </table>
+    }
+}

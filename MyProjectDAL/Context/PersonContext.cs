@@ -10,7 +10,7 @@ namespace MyProjectDAL.Context
 {
     public class PersonContext : DbContext
     {
-        public PersonContext() : base()
+        public PersonContext() : base("TDDExample")
         { }
 
         public virtual DbSet<Entity.Person> Persons { get; set; }

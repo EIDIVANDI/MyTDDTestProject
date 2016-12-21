@@ -19,5 +19,26 @@ namespace MyProjectBLL.Repository
             }
             return p;
         }
+
+        public Person AddPerson(Person person)
+        {
+            Person p = null;
+            using (var db = new PersonContext())
+            {
+                p = db.Persons.Add(person);
+                db.SaveChanges();
+            }
+            return p;
+        }
+
+        public IEnumerable<Person> GetAll()
+        {
+            var result= new List<Person>();
+            using (var db = new PersonContext())
+            {
+                result = db.Persons.ToList();
+            }
+            return result;
+        }
     }
 }

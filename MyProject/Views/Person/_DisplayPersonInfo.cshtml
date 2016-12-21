@@ -1,0 +1,13 @@
+﻿@model MyProjectDAL.Entity.Person
+@if (Model != null)
+{
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.PersonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.PersonEmail)
+        </td>
+    </tr>
+}

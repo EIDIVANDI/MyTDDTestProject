@@ -25,7 +25,7 @@ namespace MyProject.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual("", result.ViewName);
-            Assert.IsNull(result.Model);
+            Assert.IsNotNull(result.Model);
 
         }
 
@@ -81,11 +81,11 @@ namespace MyProject.Tests.Controllers
         }
         
         [TestMethod]
-        public void Display_NonExistingPet_ReturnsHttp404()
+        public void Display_NonExistingPerson_ReturnsHttp404()
         {
             // Arrange
-            string petName = "Barney";
-            SetControllerContext(petName);
+            string personName = "Barney";
+            SetControllerContext(personName);
 
             // Act
             var result = _Controller.NotFoundError() as HttpStatusCodeResult;
@@ -103,7 +103,7 @@ namespace MyProject.Tests.Controllers
             _repository.Setup(x => x.GetByName(It.Is<string>(y => y == "Fido")))
             .Returns(new Person { PersonName = personName });
             PersonManagement pm = new PersonManagement(_repository.Object);
-            PersonController controller = new PersonController(pm);
+            _Controller = new PersonController(pm);
 
         }
     }
